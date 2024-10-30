@@ -63,49 +63,69 @@
                     </a>
                 </div>
                 <div class="hover:text-ired">
-                    <a href="profile.html"
-                        class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite bg-ired border-black mt-4 lg:mt-0  bg-white">
-                        <span class="text-iwhite text-reg font-helvetica text-black">profile</span>
+                    <a href="profile.html">
+                    <button type="submit" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                        <span class=" ">profile</span>
+                    </button>
                     </a>
                 </div>
                 <div class="hover:text-ired">
-                    <button onclick="toggleTheme()" id="theme-toggle" class="inline-block text-sm px-4 py-2 leading-none text-iwhite bg-ired mt-4 lg:mt-0">
-                        <img src="images/icones/mode.png" alt="mode sombre" class="w-5">
-                    </button>
+                    <a href="#"
+                        class="inline-block text-sm px-12 py-2 leading-none border-0 text-iwhite bg-ired border-ired mt-4 lg:mt-0 ">
+                        <span class="text-iwhite text-reg font-helvetica">
+                            <img src="images/icones/mode.png" alt="mode sombre" class="w-5 p-0">
+                        </span>
+                    </a>
                 </div>
             </div>
         </nav>
     </header>
     <!-- ================================================================================================================================================================== -->
 
+
+
+
+
+
     <!-- section 1 de la page index.html -->
     <!-- bg-[url('/images/film_5.webp')] -->
-    <section
-        class="w-full h-[80vh]  bg-no-repeat bg-cover flex flex-col	justify-center items-center bg-sky-500/50 gap-10       ">
+    <section class="w-full h-[80vh]  bg-no-repeat bg-cover flex flex-col	justify-center items-center  gap-10        ">
+        <div class="relative w-full h-screen overflow-hidden">
+            <!-- Vidéo de fond -->
+            <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover ">
+                <source src="images/video.mp4" type="video/mp4" />
+                Votre navigateur ne supporte pas les vidéos HTML5.
+            </video>
 
-        <div class="flex justify-center items-center text-center ">
-            <h1 class="text-3xl" style="font-family: 'Hanalei Fill' , cursive;">
-                Laissez vous inspirer par des critiques et des recommandations personnalisées.
-            </h1>
+            <!-- Contenu au-dessus de la vidéo -->
+            <div
+                class="relative z-10 flex flex-col gap-10 items-center justify-center h-full text-white bg-black bg-opacity-50">
+                <div class="flex justify-center items-center text-center ">
+                    <h1 class="text-3xl" style="font-family: 'Hanalei Fill' , cursive;">
+                        Laissez vous inspirer par des critiques et des recommandations personnalisées.
+                    </h1>
+                </div>
+
+                <div class="flex flex-row justify-center items-center gap-4  w-full">
+                    <input type="text" placeholder="Search" class="w-2/5 h-[40px] pl-3 border rounded-full bg-white 	">
+                    <button><img src="images/icones/search.png" alt="search" class="w-9"></button>
+                </div>
+            </div>
         </div>
 
-        <div class="flex flex-row justify-center items-center gap-4  w-full">
-            <input type="text" placeholder="Search" class="w-2/5 h-[40px] pl-3 border rounded-full bg-white 	">
-            <button><img src="images/icones/search.png" alt="search" class="w-9"></button>
-        </div>
 
     </section>
 
-    
+
     <!-- section 2 de la page index.html -->
     <section class="w-full h-[110vh] flex flex-col justify-center items-center gap-10 ">
         <div>
             <h2 class="text-2xl">Liste des films populaires</h2>
         </div>
-    
+
         <!-- carousel -->
         <div class="relative w-full max-w-full h-3/4 overflow-hidden ">
-            <!-- Conteneur du carrousel -->
+            <!-- div du carrousel -->
             <div id="carousel" class="h-full flex transition-transform duration-300 ease-out ">
                 <!-- Cartes de Film -->
                 <div class="min-w-full flex-shrink-0 p-4 ">
@@ -128,7 +148,7 @@
                         <div class="w-2/3">
                             <img src="images/f_10.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
                         </div>
-                        <div class="w-1/3 p-4 text-white">
+                        <div class="w-1/3 p-4 text-white flex flex-col justify-between items-center">
                             <h2 class="text-lg font-bold">Film 2</h2>
                             <p class="text-gray-400">Date de sortie : 2023</p>
                             <p class="text-gray-400">Description du film 2.</p>
@@ -148,8 +168,8 @@
                         </div>
                     </div>
                 </div>
-                 <!-- carte 4 -->
-                 <div class="min-w-full flex-shrink-0 p-4">
+                <!-- carte 4 -->
+                <div class="min-w-full flex-shrink-0 p-4">
                     <div class="bg-gray-300 h-full flex rounded-lg">
                         <div class="w-2/3">
                             <img src="images/f_11.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
@@ -161,8 +181,8 @@
                         </div>
                     </div>
                 </div>
-                 <!-- carte 5 -->
-                 <div class="min-w-full flex-shrink-0 p-4">
+                <!-- carte 5 -->
+                <div class="min-w-full flex-shrink-0 p-4">
                     <div class="bg-gray-300 h-full flex rounded-lg">
                         <div class="w-2/3">
                             <img src="images/f_12.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
@@ -178,14 +198,15 @@
                 <!-- Autres cartes de film identiques -->
             </div>
         </div>
-    
+
         <!-- Boutons de navigation -->
         <div class="flex">
-            <button id="prev" class="w-40 h-10 bg-red-800 border rounded-lg border-2 border-white text-white">précédent</button>
-            <button id="next" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800">suivant</button>
+           
+            <button id="prev" class="w-40 h-10 bg-red-800 border rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">précédent</button>
+            <button id="next" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-red-800 hover:text-white">suivant</button>
         </div>
     </section>
-    
+
 
 
 
@@ -203,9 +224,11 @@
                     </div>
                 </div>
                 <div class=" hidden sm:block hover:text-ired ">
-                    <a href="profile.html"
-                        class="inline-block text-sm px-12 py-2 leading-none border rounded text-iwhite bg-ired border-black mt-4 lg:mt-0  bg-white">
-                        <span class="text-iwhite text-reg font-helvetica text-black">profile</span>
+                    <a href="profile.html">
+
+                        <button type="submit" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                            <span class=" ">profile</span>
+                        </button>
                     </a>
                 </div>
 
