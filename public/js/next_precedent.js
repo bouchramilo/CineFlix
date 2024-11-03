@@ -1,25 +1,31 @@
+
 const carousel = document.getElementById("carousel");
 const nextButton = document.getElementById("next");
 const prevButton = document.getElementById("prev");
 let index = 0;
-const totalSlides = carousel.children.length;
 let autoScroll;
+
+// Fonction pour calculer la largeur d'une carte et ajuster la taille du défilement
+function calculateCardWidth() {
+  const card = carousel.children[0];
+  const cardStyle = window.getComputedStyle(card);
+  const cardWidth = card.offsetWidth + parseInt(cardStyle.marginLeft) + parseInt(cardStyle.marginRight);
+  return cardWidth;
+}
 
 // Fonction pour mettre à jour la position du carrousel
 function updateCarousel() {
-  carousel.style.transform = `translateX(-${index * 100}%)`;
+  const cardWidth = calculateCardWidth();
+  carousel.style.transform = `translateX(-${index * cardWidth}px)`;
 }
 
 // Fonction pour faire défiler automatiquement
 function startAutoScroll() {
   autoScroll = setInterval(() => {
-    index = (index + 1) % totalSlides; // Incrémente l'index et revient à zéro à la fin
+    index = (index + 1) % carousel.children.length;
     updateCarousel();
   }, 3000); // Défiler toutes les 3 secondes
 }
-
-// Démarre l'autodéfilement au chargement de la page
-startAutoScroll();
 
 // Arrête l'autodéfilement et le redémarre après 5 secondes d'inactivité
 function resetAutoScroll() {
@@ -30,14 +36,24 @@ function resetAutoScroll() {
 // Écouteurs pour les boutons "Next" et "Prev"
 nextButton.addEventListener("click", () => {
   clearInterval(autoScroll);
-  index = (index + 1) % totalSlides; // Passe au suivant
+  index = (index + 1) % carousel.children.length;
   updateCarousel();
-  resetAutoScroll(); // Redémarre l'autodéfilement
+  resetAutoScroll();
 });
 
 prevButton.addEventListener("click", () => {
   clearInterval(autoScroll);
-  index = (index - 1 + totalSlides) % totalSlides; // Passe au précédent
+  index = (index - 1 + carousel.children.length) % carousel.children.length;
   updateCarousel();
-  resetAutoScroll(); // Redémarre l'autodéfilement
+  resetAutoScroll();
+});
+
+// Ajuster la largeur des cartes au chargement et lors du redimensionnement de la fenêtre
+window.addEventListener("load", () => {
+  updateCarousel();
+  startAutoScroll();
+});
+
+window.addEventListener("resize", () => {
+  updateCarousel();
 });

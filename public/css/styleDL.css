@@ -1,0 +1,21 @@
+
+
+@import url("https://fonts.googleapis.com/css2?family=Handlee&display=swap");
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Handlee', cursive;
+}
+
+body.light {
+    background-color: #ffffff;
+    color: #121212;
+}
+
+body.dark {
+    background-color: #121212;
+    color: #ffffff;
+}

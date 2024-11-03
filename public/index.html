@@ -7,40 +7,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="CineFlix is your ultimate movie review platform. Discover and explore film details, ratings, and comments. Join us to enhance your movie experience with personalized recommendations and favorites!">
     <title>CineFlix - Accueil</title>
-    <!-- <link rel="stylesheet" href="css/framework_tailwind.css"> -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Handlee', cursive;
-        }
-
-        body.light {
-            background-color: #ffffff;
-            color: #121212;
-        }
-
-        body.dark {
-            background-color: #121212;
-            color: #ffffff;
-        }
-    </style>
+    <link href="css/styleDL.css" rel="stylesheet">
 
 </head>
 
 <body class=" flex flex-col gap-3 ">
+
     <!-- ================================================================================================================================================================== -->
     <!-- header de la page  -->
 
     <header class="gap-5 mb-2 text-slate-50">
-        <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-8 border-b-iborder gap-4">
+        <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-2 gap-4">
             <div class="flex items-center flex-no-shrink mr-6">
                 <a href="index.html">
                     <span class="font-preosper text-logo tracking-tight text-ired hover:text-iiwhite">CineFlix</span>
@@ -48,7 +29,7 @@
             </div>
 
             <!-- Bouton de menu pour mobiles, visible seulement sur petits écrans -->
-            <div class="block lg:hidden flex">
+            <div class=" lg:hidden flex">
                 <button onclick="toggleMenu()"
                     class="flex items-center px-3 py-2 border rounded text-iwhite border-teal-light hover:text-ired hover:border-ired ">
                     <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
@@ -58,7 +39,7 @@
             </div>
 
             <!-- Conteneur du menu -->
-            <div id="menu" class="w-full block flex-shrink lg:flex lg:items-center lg:w-auto hidden">
+            <div id="menu" class="w-full  flex-shrink lg:flex lg:items-center lg:w-auto hidden">
                 <div class="text-sm lg:flex-grow">
                     <a href="index.html"
                         class="block mt-4 lg:inline-block lg:mt-0 text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
@@ -68,16 +49,11 @@
                         class="block mt-4 lg:inline-block lg:mt-0  text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
                         Ma liste
                     </a>
-
-                    <a href="details.html"
-                        class="block mt-4 lg:inline-block lg:mt-0  text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
-                        details
-                    </a>
                 </div>
                 <div class="hover:text-ired">
-                    <a href="profile.html">
+                    <a href="#">
                         <button type="submit"
-                            class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                            class="w-40 h-10 bg-white rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
                             <span class=" ">profile</span>
                         </button>
                     </a>
@@ -92,18 +68,18 @@
         </nav>
     </header>
 
+
+
+
+
+
     <!-- ================================================================================================================================================================== -->
-
-
-
-
-
-
     <!-- section 1 de la page index.html -->
-    <!-- bg-[url('/images/film_5.webp')] -->
-    <section class="w-full h-[80vh]  bg-no-repeat bg-cover flex flex-col	justify-center items-center  gap-10        ">
+
+    <section class="w-full h-[80vh]  bg-no-repeat bg-cover flex flex-col justify-center items-center  gap-10">
+
         <div class="relative w-full h-screen overflow-hidden">
-            <!-- Vidéo de fond -->
+            <!-- Vidéo de background -->
             <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover ">
                 <source src="images/video.mp4" type="video/mp4" />
                 Votre navigateur ne supporte pas les vidéos HTML5.
@@ -119,114 +95,145 @@
                 </div>
 
                 <div class="flex flex-row justify-center items-center gap-4  w-full">
-                    <input id="search" type="text" placeholder="Search" class="w-2/5 h-[40px] pl-3 border rounded-full bg-white text-black	">
-                    <!-- <button><img src="images/icones/search.png" alt="search" class="w-9"></button> -->
+                    <input id="search" type="text" placeholder="Search"
+                        class="w-2/5 h-[40px] pl-3 border rounded-full bg-white text-black	">
                 </div>
             </div>
         </div>
 
-
     </section>
 
 
+
+    <!-- ================================================================================================================================================================== -->
     <!-- section 2 de la page index.html -->
-    <section class="w-full h-[110vh] flex flex-col justify-center items-center gap-10 ">
+
+    <section class="w-full h-[90vh] flex flex-col justify-center items-center gap-6">
+
         <div>
             <h2 class="text-2xl text-red-800 font-bold">Liste des films populaires</h2>
         </div>
 
         <!-- carousel -->
-        <div id="movies" class="relative w-full max-w-full h-3/4 overflow-hidden ">
-            <!-- div du carrousel -->
-            <div id="carousel" class="h-full flex transition-transform duration-300 ease-out ">
-                <!-- Cartes de Film -->
-                <div id="mv" class="min-w-full flex-shrink-0 p-4 ">
-                    <div class="bg-gray-300 h-full flex rounded-lg  ">
-                        <!-- Image du film -->
-                        <div class="w-2/3">
-                            <img src="images/f_13.png" alt="Film 1" class="w-full h-full object-cover rounded-l-lg">
+        <div id="movies" class="relative w-[80%] max-w-md h-[50%] overflow-hidden">
+            <div id="carousel" class="flex transition-transform duration-300 ease-out gap-2">
+                <!-- Carte de Film -->
+
+                <!-- carte 1 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_13.png" alt="Film 1"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Venom: The Last Dance</h3>
                         </div>
-                        <!-- Détails du film -->
-                        <div class="w-1/3 p-4 text-white">
-                            <h2 class="text-lg font-bold">aFilm 1</h2>
-                            <p class="text-gray-400">Date de sortie : 2024</p>
-                            <p class="text-gray-400">Description du film 1.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Répéter pour chaque carte de film -->
-                <div class="min-w-full flex-shrink-0 p-4">
-                    <div class="bg-gray-300 h-full flex rounded-lg">
-                        <div class="w-2/3">
-                            <img src="images/f_10.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
-                        </div>
-                        <div class="w-1/3 p-4 text-white flex flex-col justify-between items-center">
-                            <h2 class="text-lg font-bold">aFilm 2</h2>
-                            <p class="text-gray-400">Date de sortie : 2023</p>
-                            <p class="text-gray-400">Description du film 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- carte 3 -->
-                <div class="min-w-full flex-shrink-0 p-4">
-                    <div class="bg-gray-300 h-full flex rounded-lg">
-                        <div class="w-2/3">
-                            <img src="images/f_15.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
-                        </div>
-                        <div class="w-1/3 p-4 text-white">
-                            <h2 class="text-lg font-bold">Film 3</h2>
-                            <p class="text-gray-400">Date de sortie : 2023</p>
-                            <p class="text-gray-400">Description du film 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- carte 4 -->
-                <div class="min-w-full flex-shrink-0 p-4">
-                    <div class="bg-gray-300 h-full flex rounded-lg">
-                        <div class="w-2/3">
-                            <img src="images/f_11.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
-                        </div>
-                        <div class="w-1/3 p-4 text-white">
-                            <h2 class="text-lg font-bold">Film 4</h2>
-                            <p class="text-gray-400">Date de sortie : 2023</p>
-                            <p class="text-gray-400">Description du film 2.</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- carte 5 -->
-                <div class="min-w-full flex-shrink-0 p-4">
-                    <div class="bg-gray-300 h-full flex rounded-lg">
-                        <div class="w-2/3">
-                            <img src="images/f_12.png" alt="Film 2" class="w-full h-full object-cover rounded-l-lg">
-                        </div>
-                        <div class="w-1/3 p-4 text-white">
-                            <h2 class="text-lg font-bold">bFilm 5</h2>
-                            <p class="text-gray-400">Date de sortie : 2023</p>
-                            <p class="text-gray-400">Description du film 2.</p>
-                        </div>
-                    </div>
+                    </a>
                 </div>
 
-                <!-- Autres cartes de film identiques -->
+                <!-- carte 2 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_10.png" alt="Film 2"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Baby Boss</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- carte 3 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_15.png" alt="Film 3"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Alien: Romulus</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Carte 4-->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_14.png" alt="Film 1"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Joker</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- carte 5 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_5.png" alt="Film 2"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Spider-Man _ Far From Home</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- carte 6 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_16.png" alt="Film 3"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Despicable Me 4</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Carte 7 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_19.png" alt="Film 1"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">Beautiful mind</h3>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- carte 8 -->
+                <div class=" w-[150px] flex-shrink-0 relative group">
+                    <a href="details.html">
+                        <img src="images/f_11.png" alt="Film 2"
+                            class="w-full h-full object-cover rounded-lg border-red-800 border-4">
+                        <div
+                            class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                            <h3 class="text-white font-bold">ALlo maman c'est noel</h3>
+                        </div>
+                    </a>
+                </div>
+
             </div>
         </div>
 
         <!-- Boutons de navigation -->
         <div class="flex">
-           
-            <button id="prev" class="w-40 h-10 bg-red-800 border rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">précédent</button>
-            <button id="next" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-red-800 hover:text-white">suivant</button>
+
+            <button id="prev"
+                class="w-40 h-10 bg-red-800  rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">précédent</button>
+            <button id="next"
+                class="w-40 h-10 bg-white rounded-lg border-2 border-red-800 text-black hover:bg-red-800 hover:text-white">suivant</button>
         </div>
     </section>
 
 
-
-
-
     <!-- ================================================================================================================================================================  -->
     <!-- footer de la page index.html -->
-    <footer class="border-t-8 border-t-iborder mt-5 bg-red-800">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-16">
+
+    <footer class="border-t-2 mt-5 bg-red-800">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-4">
             <div class="sm:flex sm:items-center sm:justify-between my-3">
                 <div class="flex justify-center text-teal-600 sm:justify-start">
                     <div class="group relative">
@@ -236,18 +243,21 @@
                     </div>
                 </div>
                 <div class=" hidden sm:block hover:text-ired ">
-                    <a href="profile.html">
-
-                        <button type="submit" class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                    <a href="#">
+                        <button type="submit"
+                            class="w-40 h-10 bg-white  rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
                             <span class=" ">profile</span>
                         </button>
                     </a>
                 </div>
 
             </div>
+
             <hr class="border-2  border-black  	">
-            <div class=" flex justify-between ">
-                <div class="sm:flex sm:items-center sm:justify-between my-4 hidden sm:block">
+
+            <div class=" flex lg:justify-between max-md:justify-center md:justify-between">
+
+                <div class=" sm:items-center sm:justify-between my-4 hidden sm:block">
                     <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-start">
                         <li>
                             <a href="#" rel="noreferrer" target="_blank"
@@ -264,11 +274,11 @@
                                 Ma liste
                             </a>
                         </li>
-
-
                     </ul>
                 </div>
-                <div class=" flex justify-between">
+
+                <div class="flex lg:justify-between max-md:justify-center max-md:items-center">
+
                     <div class="sm:flex sm:justify-center sm:items-between  my-4    ">
                         <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-censter ">
                             <li>
@@ -319,6 +329,7 @@
                             </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
 
@@ -333,10 +344,11 @@
 
 </body>
 
-<!-- Script pour afficher/masquer le menu sur petits écrans -->
+<!-- Script js -->
 <script src="js/toggleMenu.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/search.js"></script>
 <script src="js/next_precedent.js"></script>
+
 
 </html>

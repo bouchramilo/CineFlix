@@ -7,41 +7,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="CineFlix is your ultimate movie review platform. Discover and explore film details, ratings, and comments. Join us to enhance your movie experience with personalized recommendations and favorites!">
     <title>CineFlix - Details</title>
-    <!-- <link rel="stylesheet" href="css/framework_tailwind.css"> -->
-    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
     <link rel="stylesheet" href="css/style.css">
 
-    <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet">
-
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Handlee', cursive;
-        }
-
-        body.light {
-            background-color: #ffffff;
-            color: #121212;
-        }
-
-        body.dark {
-            background-color: #121212;
-            color: #ffffff;
-        }
-    </style>
+    <link href="css/styleDL.css" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
-<body class="">
+<body class="flex flex-col gap-3 ">
     <!-- ================================================================================================================================================================== -->
-    <!-- header de la page  -->
+    <!-- header de la page  --> 
 
     <header class="gap-5 mb-2 text-slate-50">
-        <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-8 border-b-iborder gap-4">
+        <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-2 gap-4">
             <div class="flex items-center flex-no-shrink mr-6">
                 <a href="index.html">
                     <span class="font-preosper text-logo tracking-tight text-ired hover:text-iiwhite">CineFlix</span>
@@ -49,7 +29,7 @@
             </div>
 
             <!-- Bouton de menu pour mobiles, visible seulement sur petits écrans -->
-            <div class="block lg:hidden flex">
+            <div class=" lg:hidden flex">
                 <button onclick="toggleMenu()"
                     class="flex items-center px-3 py-2 border rounded text-iwhite border-teal-light hover:text-ired hover:border-ired ">
                     <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
@@ -59,7 +39,7 @@
             </div>
 
             <!-- Conteneur du menu -->
-            <div id="menu" class="w-full block flex-shrink lg:flex lg:items-center lg:w-auto hidden">
+            <div id="menu" class="w-full  flex-shrink lg:flex lg:items-center lg:w-auto hidden">
                 <div class="text-sm lg:flex-grow">
                     <a href="index.html"
                         class="block mt-4 lg:inline-block lg:mt-0 text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
@@ -71,9 +51,9 @@
                     </a>
                 </div>
                 <div class="hover:text-ired">
-                    <a href="profile.html">
+                    <a href="#">
                         <button type="submit"
-                            class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                            class="w-40 h-10 bg-white rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
                             <span class=" ">profile</span>
                         </button>
                     </a>
@@ -92,47 +72,71 @@
     <!-- section 1 de la page details.html -->
 
     <section class="flex flex-col">
-        <div class="flex flex-row w-full h-[80vh] ">
-            <div class="w-[50%] h-full flex justify-center items-center">
-                <img src="images/brief_4.jpg" alt="film"
-                    class="h-[90%] w-3/4 border rounded-xl border-4 border-red-800 ">
+        <div class="flex lg:flex-row max-md:flex-col max-sm:flex-col w-full lg:h-[80vh] max-md:h-[100vh] ">
+            <div class="w-[50%] h-full  max-md:w-full flex justify-center items-center max-md:h-[60%]">
+                <img src="images/f_5.png" alt="film" class="h-[90%] w-3/4  rounded-xl border-4 border-red-800 ">
             </div>
-            <div class="flex flex-col justify-center items-start gap-10">
-                <div class="flex flex-row gap-10 justify-center items-start">
-                    <h2 class="pl-4 text-red-800 text-2xl">
+            <div class="flex flex-col justify-center items-start lg:gap-8  max-md:gap-2  max-md:pl-8">
+                <div class="flex flex-row lg:gap-10 justify-center items-start  max-md:gap-4 max-sm:gap-2 ">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
                         Titre de film :
                     </h2>
                     <p class="dark:text-white">
-                        titre de filmmmmmm
+                        Spider-Man _ Far From Home
                     </p>
                 </div>
-                <div class="flex flex-row gap-10 justify-center items-start">
-                    <h2 class="pl-4 text-red-800 text-2xl">
-                        Les principaux acteurs du film :
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Année d'émission :
                     </h2>
                     <p class="dark:text-white">
-                        acteur 1, acteur 2, acteur 3.
+                        2011
                     </p>
                 </div>
 
-                <div class="flex flex-row gap-10 justify-center items-start">
-                    <h2 class="pl-4 text-red-800 text-2xl">
-                        La date de ortie du film :
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Langue :
                     </h2>
                     <p class="dark:text-white">
-                        jour / mois / annee
+                        Anglais
                     </p>
                 </div>
 
-                <div class="flex flex-row gap-10 justify-center items-start">
-                    <h2 class="pl-4 text-red-800 text-2xl">
-                        Les notes sur le film :
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Genre :
                     </h2>
-                    <p id="rating-value" class="mt-2 text-lg text-red-800 dark:text-white">0/5</p>
+                    <p class="dark:text-white">
+                        Advanture , Science-fiction , Action
+                    </p>
                 </div>
-                <div class="flex flex-row gap-10 justify-center items-center">
+
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Durée du film :
+                    </h2>
+                    <p class="dark:text-white">
+                        138 min
+                    </p>
+                </div>
+
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Notes sur le film :
+                    </h2>
+                    <p id="rating-value" class="mt-2 text-lg  dark:text-white">0/5</p>
+                </div>
+                <div class="flex flex-row lg:gap-10 justify-center items-start max-md:gap-4 max-sm:gap-2">
+                    <h2 class="pl-4 text-red-800 text-2xl max-md:text-xl">
+                        Nombre des "j'aime" de ce film :
+                    </h2>
+                    <p id="like-count-film123" class="mt-2 text-lg dark:text-white">0</p> <!-- nombre des likes -->
+                </div>
+
+                <div class="flex flex-row lg:gap-10 justify-center items-center max-md:gap-4 max-sm:gap-2">
                     <div id="rating" class=" flex space-x-1 pl-5">
-                        <!-- Étoiles qui réagiront au clic pour attribuer une note -->
+                        <!-- Etoiles -->
                         <span data-value="1" class="text-gray-400 cursor-pointer hover:text-red-800">★</span>
                         <span data-value="2" class="text-gray-400 cursor-pointer hover:text-red-800">★</span>
                         <span data-value="3" class="text-gray-400 cursor-pointer hover:text-red-800">★</span>
@@ -141,13 +145,20 @@
                     </div>
 
                     <!-- add_tofavoris -->
-                    <button class="pl-4 mt-2 " onclick="addToFavorites('baby boss', 'a baby boss', 'images/f_10.png')">
+                    <button class="pl-4 mt-2 "
+                        onclick="addToFavorites('Spider-Man', 'Anglais', 'images/f_5.png', 'Action', 2002, '4/5')">
+                        <img src="images/icones/sauvegarder.png" alt="sauvegarder" class="w-8">
+                    </button>
+
+
+                    <button id="like" class="pl-4 mt-2" onclick="likeFilm('film123')">
                         <img src="images/icones/aimer.png" alt="aimer" class="w-8">
                     </button>
+
                 </div>
             </div>
         </div>
-        <div class="flex justify-center items-center  ">
+        <div class="flex justify-center items-center lg:mt-10  mt-20">
             <div class="flex flex-col justify-center   w-11/12 px-8 gap-5 ">
                 <h2 class="text-red-800 text-2xl">Résume de film : </h2>
                 <p class="text-lg leading-9	dark:text-white">
@@ -163,61 +174,31 @@
     <!-- ============================================================================================================================= -->
     <!-- section 2  -->
 
-    <!-- class="section2"  -->
-    <!-- <div class="background-blur"></div> -->
-    <!-- class="content" -->
-    <section class="flex flex-col  justify-center items-center h-[110vh] w-full    sm:flex-row">
+    <section class="flex flex-col   justify-center items-center lg:h-[110vh] w-full ">
         <div class="relative w-full h-screen overflow-hidden">
             <!-- Vidéo de fond -->
             <img src="images/image_1.jpg" class="absolute inset-0 w-full h-full object-cover">
 
-            <!-- <img src="images/" alt=""> -->
 
             <!-- Contenu au-dessus de la vidéo -->
-            <div class="relative z-10 flex items-center justify-center h-full text-white bg-black bg-opacity-50">
-                <div class="w-1/3 h-4/5 flex justify-center items-center ">
+            <div
+                class="relative z-10 flex items-center justify-center h-full text-white bg-black bg-opacity-50  max-md:flex-col ">
+                <div class="lg:w-1/3 h-4/5 flex justify-center items-center max-md:w-[80%]">
                     <form
-                        class="w-4/5 h-4/5 flex flex-col justify-center items-center gap-10 border border-4 border-red-800 rounded-xl bg-gray-300 bg-opacity-50">
+                        class="lg:w-4/5 lg:h-4/5 flex flex-col justify-center items-center gap-10  border-4 border-red-800 rounded-xl bg-gray-300 bg-opacity-50  max-md:w-[100%]">
                         <legend class=" text-center  text-red-800 text-2xl ">Ajouter un commantaire:</legend>
                         <textarea
                             class="w-4/5 h-2/5 resize-none p-4 rounded-lg border-b-2 border-red-800 text-black dark:text-white "
                             placeholder="Votre commantaire ..."></textarea>
                         <button
-                            class="w-40 h-10 bg-red-800 border rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">Envoyer</button>
+                            class="w-40 h-10 bg-red-800  rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">Envoyer</button>
                     </form>
 
-
                 </div>
-                <div class="w-2/3 h-full  flex flex-col  items-center gap-6 bg-gray-300 bg-opacity-50 " class="content">
+                <div class="lg:w-2/3 h-full  flex flex-col  items-center gap-6 bg-gray-300 bg-opacity-50 max-md:w-full "
+                    class="content">
                     <div class="w-full flex justify-center items-center  mt-4">
                         <h2 class="text-center text-red-800 text-2xl">Votre commentaires :</h2>
-                    </div>
-
-                    <div class="w-full flex justify-center items-center ">
-                        <div class="w-2/12 pl-4">
-                            <img src="images/icones/commentaire.png" alt="commentaire">
-                        </div>
-                        <div class="w-10/12">
-                            <p>commentaire , Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full flex justify-center items-center ">
-                        <div class="w-2/12 pl-4">
-                            <img src="images/icones/commentaire.png" alt="commentaire">
-                        </div>
-                        <div class="w-10/12">
-                            <p>commentaire , Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-                        </div>
-                    </div>
-
-                    <div class="w-full flex justify-center items-center ">
-                        <div class="w-2/12 pl-4">
-                            <img src="images/icones/commentaire.png" alt="commentaire">
-                        </div>
-                        <div class="w-10/12">
-                            <p>commentaire , Lorem ipsum dolor sit amet consectetur, adipisicing elit. </p>
-                        </div>
                     </div>
 
                 </div>
@@ -226,12 +207,10 @@
 
     </section>
 
-
-
     <!-- ================================================================================================================================================================  -->
     <!-- footer de la page index.html -->
-    <footer class="border-t-8 border-t-iborder mt-5 bg-red-800">
-        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-16">
+    <footer class="border-t-2 mt-5 bg-red-800">
+        <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-4">
             <div class="sm:flex sm:items-center sm:justify-between my-3">
                 <div class="flex justify-center text-teal-600 sm:justify-start">
                     <div class="group relative">
@@ -241,10 +220,10 @@
                     </div>
                 </div>
                 <div class=" hidden sm:block hover:text-ired ">
-                    <a href="profile.html">
+                    <a href="#">
 
                         <button type="submit"
-                            class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                            class="w-40 h-10 bg-white  rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
                             <span class=" ">profile</span>
                         </button>
                     </a>
@@ -252,8 +231,8 @@
 
             </div>
             <hr class="border-2  border-black  	">
-            <div class=" flex justify-between ">
-                <div class="sm:flex sm:items-center sm:justify-between my-4 hidden sm:block">
+            <div class=" flex lg:justify-between max-md:justify-center md:justify-between">
+                <div class=" sm:items-center sm:justify-between my-4 hidden sm:block">
                     <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-start">
                         <li>
                             <a href="#" rel="noreferrer" target="_blank"
@@ -274,7 +253,7 @@
 
                     </ul>
                 </div>
-                <div class=" flex justify-between">
+                <div class="flex lg:justify-between max-md:justify-center max-md:items-center">
                     <div class="sm:flex sm:justify-center sm:items-between  my-4    ">
                         <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-censter ">
                             <li>
@@ -337,30 +316,15 @@
     </footer>
 
     <!-- ================================================================================================================================================================ -->
-    <script>
-        function addToFavorites(title, description, imageUrl) {
-            let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-            const film = { title, description, imageUrl };
-        
-            // Vérifier si le film est déjà dans les favoris
-            if (!favorites.some(fav => fav.title === title)) {
-                favorites.push(film);
-                localStorage.setItem('favorites', JSON.stringify(favorites));
-                alert('Film ajouté aux favoris !');
-            } else {
-                alert('Ce film est déjà dans vos favoris.');
-            }
-        }
-        </script>
 
 </body>
 
-
-<!-- Script pour afficher/masquer le menu sur petits écrans -->
+<!-- Script js -->
 <script src="js/toggleMenu.js"></script>
 <script src="js/theme.js"></script>
 <script src="js/etoiles.js"></script>
-
-<script src="js/next_precedent.js"></script>
+<script src="js/likes.js"></script>
+<script src="js/addFavoris.js"></script>
+<script src="js/comment.js"></script>
 
 </html>

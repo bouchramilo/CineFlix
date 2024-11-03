@@ -1,376 +1,343 @@
 <!-- page index.html -->
 
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CineFlix - Ma liste</title>
-  <!-- <link rel="stylesheet" href="css/framework_tailwind.css"> -->
-  <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="stylesheet" href="css/style.css">
-
-  <link href="https://fonts.googleapis.com/css2?family=Handlee&display=swap" rel="stylesheet"> <!-- for font-fammily -->
-
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: 'Handlee', cursive;
-    }
-
-    body.light {
-      background-color: #ffffff;
-      color: #121212;
-    }
-
-    body.dark {
-      background-color: #121212;
-      color: #ffffff;
-    }
-
-
-    /* body{
-      background-color: #121212;
-    } */
-  </style>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description"
+      content="CineFlix is your ultimate movie review platform. Discover and explore film details, ratings, and comments. Join us to enhance your movie experience with personalized recommendations and favorites!">
+   <title>CineFlix - Ma liste</title>
+   <link rel="stylesheet" href="css/style.css">
+   <link href="css/styleDL.css" rel="stylesheet">
+   <script src="https://cdn.tailwindcss.com"></script>
 
 </head>
 
 <body class=" flex flex-col gap-3 ">
-  <!-- ================================================================================================================================================================== -->
-  <!-- header de la page  -->
 
-  <header class="gap-5 mb-2 text-slate-50">
-    <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-8 border-b-iborder gap-4">
-      <div class="flex items-center flex-no-shrink mr-6">
-        <a href="index.html">
-          <span class="font-preosper text-logo tracking-tight text-ired hover:text-iiwhite">CineFlix</span>
-        </a>
-      </div>
+   <!-- ================================================================================================================================================================== -->
+   <!-- header de la page  -->
 
-      <!-- Bouton de menu pour mobiles, visible seulement sur petits écrans -->
-      <div class="block lg:hidden flex">
-        <button onclick="toggleMenu()"
-          class="flex items-center px-3 py-2 border rounded text-iwhite border-teal-light hover:text-ired hover:border-ired ">
-          <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
+   <header class="gap-5 mb-2 text-slate-50">
+      <nav class="flex items-center justify-between flex-wrap bg-red-800 p-1 px-4 border-b-2 gap-4">
+         <div class="flex items-center flex-no-shrink mr-6">
+            <a href="index.html">
+               <span class="font-preosper text-logo tracking-tight text-ired hover:text-iiwhite">CineFlix</span>
+            </a>
+         </div>
 
-      <!-- Conteneur du menu -->
-      <div id="menu" class="w-full block flex-shrink lg:flex lg:items-center lg:w-auto hidden">
-        <div class="text-sm lg:flex-grow">
-          <a href="index.html"
-            class="block mt-4 lg:inline-block lg:mt-0 text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
-            Accueil
-          </a>
-          <a href="maListe.html"
-            class="block mt-4 lg:inline-block lg:mt-0  text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
-            Ma liste
-          </a>
-        </div>
-        <div class="hover:text-ired">
-          <a href="profile.html">
-            <button type="submit"
-              class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
-              <span class=" ">profile</span>
+         <!-- Bouton de menu pour mobiles, visible seulement sur petits écrans -->
+         <div class=" lg:hidden flex">
+            <button onclick="toggleMenu()"
+               class="flex items-center px-3 py-2 border rounded text-iwhite border-teal-light hover:text-ired hover:border-ired ">
+               <svg class="fill-current h-5 w-5" viewBox="0 0 20 20">
+                  <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
+               </svg>
             </button>
-          </a>
-        </div>
-        <div class="hover:text-ired">
-          <button onclick="toggleTheme()" class="text-iwhite bg-ired p-2 rounded">
-            <img src="images/icones/mode.png" alt="mode sombre" class="w-5 p-0">
-          </button>
+         </div>
 
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <!-- ================================================================================================================================================================== -->
-
-  <!-- section 1 de la page index.html -->
-
-  <section class=" w-full h-full flex flex-col sm:flex sm:flex-row	">
-
-    <div class="w-1/5 h-full  py-2 px-4 gap-4   text-black grid grid-rows-2  ">
-
-      <form method="GET" action="#" class="">
-        <!-- filter genres  -->
-        <div class="mb-4 border rounded-xl border-red-800 p-5  flex flex-col gap-2  dark:bg-[#121212] ">
-          <h1 class="text-light text-red-800  ">Genre:</h1>
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="drama" value="Drama">
-              <span class=" ">Drama </span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200 ">
-            <label>
-              <input type="checkbox" name="Scify" value="Scify">
-              <span class="text-reg ">Scify </span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="romance" value="Romance">
-              <span class="text-reg ">Romance </span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="advanture" value="Advanture">
-              <span class="text-reg ">Advanture </span>
-            </label>
-          </div>
-        </div>
-        <!-- filter langages -->
-        <div class="mb-4 border rounded-xl border-red-800 p-5 flex flex-col gap-2  dark:bg-[#121212]">
-          <h1 class="text-light text-red-800 ">Language:</h1>
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="arabic" value="Arabic">
-              <span class="text-reg ">Arabic</span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="english" value="English">
-              <span class="text-reg ">English</span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="french" value="French">
-              <span class="text-reg ">French</span>
-            </label>
-          </div>
-
-          <div class="border border-ishadow rounded-lg flex py-2 px-1 bg-gray-200">
-            <label>
-              <input type="checkbox" name="spanish" value="Spanish">
-              <span class="text-reg ">Spanish</span>
-            </label>
-          </div>
-
-        </div>
-        <div class="flex justify-center">
-          <!-- bouton apply filter -->
-          <button type="submit"
-            class="w-40 h-10 bg-red-800 border rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">
-            <span class="">Apply Filters</span>
-          </button>
-        </div>
-      </form>
-      <!-- bouton clear filter -->
-      <form method="GET" action="" class="flex justify-center ">
-        <button type="submit"
-          class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-red-800 hover:text-white">
-          <span class=" ">Clear Filters</span>
-        </button>
-      </form>
-    </div>
-
-    <!-- div  pour afficher les films favoriser  -->
-
-    <div class="flex flex-col justify-start items-center  w-full  h-full ">
-
-      <div class=" h-1/6 w-full felx  justify-center items-center">
-        <h1 class="text-red-800 text-3xl  text-center" style="font-family: 'Hanalei Fill' , cursive;">Mes Favoris</h1>
-      </div>
-
-      <div id="favoritesContainer" class="h-5/6 grid grid-cols-4 gap-4 justify-start w-full  p-4">
-        <!-- carte film 2 -->
-        <div class="max-w-xs rounded h-[90%] overflow-hidden shadow-lg bg-white hover:border-4 hover:border-red-800">
-          <div class="relative group">
-            <div class="h-4/5 w-full bg-gray-200">
-              <img src="images/f_14.png" alt="film 1"
-                class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
-              <div
-                class="absolute inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                <h3 class="absolute top-16  text-white font-bold">Joker</h3>
-                <p class="text-white text-center p-4">Description courte le film Joker 
-                </p>
-              </div>
-              <button class="absolute bottom-16 right-4  py-2 px-4">
-                <img src="images/icones/corbeille.png" alt="corbeille" class="w-10 ">
-              </button>
+         <!-- Conteneur du menu -->
+         <div id="menu" class="w-full  flex-shrink lg:flex lg:items-center lg:w-auto hidden">
+            <div class="text-sm lg:flex-grow">
+               <a href="index.html"
+                  class="block mt-4 lg:inline-block lg:mt-0 text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
+                  Accueil
+               </a>
+               <a href="maListe.html"
+                  class="block mt-4 lg:inline-block lg:mt-0  text-iwhite hover:text-ired mr-4 font-helvetica text-reg">
+                  Ma liste
+               </a>
             </div>
-          </div>
-        </div>
-        
-
-
-
-
-      </div>
-
-
-  </section>
-
-
-
-
-
-
-
-  <!-- ================================================================================================================================================================  -->
-  <!-- footer de la page index.html -->
-  <footer class="border-t-8 border-t-iborder mt-5 bg-red-800">
-    <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-16">
-      <div class="sm:flex sm:items-center sm:justify-between my-3">
-        <div class="flex justify-center text-teal-600 sm:justify-start">
-          <div class="group relative">
-            <div class="flex items-center flex-no-shrink mr-6">
-              <span class="font-preosper text-logo tracking-tight text-ired text-base	">CineFlix</span>
+            <div class="hover:text-ired">
+               <a href="#">
+                  <button type="submit"
+                     class="w-40 h-10 bg-white rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                     <span class=" ">profile</span>
+                  </button>
+               </a>
             </div>
-          </div>
-        </div>
-        <div class=" hidden sm:block hover:text-ired ">
-          <a href="profile.html">
+            <div class="hover:text-ired">
+               <button onclick="toggleTheme()" class="text-iwhite bg-ired p-2 rounded">
+                  <img src="images/icones/mode.png" alt="mode sombre" class="w-5 p-0">
+               </button>
 
+            </div>
+         </div>
+      </nav>
+   </header>
+
+
+   <!-- ================================================================================================================================================================== -->
+   <!-- section 1 de la page index.html -->
+
+   <section class=" lg:w-full flex lg:flex-row max-md:flex-col max-sm:flex-col max-lg:h-max max-lg:items-start   ">
+
+      <div
+         class="w-1/5 px-4 max-lg:px-1 text-black grid lg:grid-rows-2   lg:gap-4 max-md:gap-0 max-md:grid-flow-cols-2 max-md:h-70 max-md:w-full max-lg:flex max-lg:flex-col max-lg:gap-4">
+
+         <form method="GET" action="#" id="filterForm"
+            class="max-md:flex-col max-md:gap-4 max-md:h-max max-md:w-full  max-lg:flex max-lg:flex-col max-lg:gap-4 max-lg:h-max max-lg:w-[95%] ">
+            <div
+               class="border rounded-xl border-red-800 flex justify-between gap-2 bg-transparent lg:mb-4 lg:p-5 lg:flex-col max-lg:flex-col max-md:flex-row max-md:my-1 max-md:py-2     ">
+               <select name="year" id="year-select"
+                  class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm  bg-gray-200 max-md:w-1/4">
+                  <option value="">Année</option>
+                  <option value="2001">2001</option>
+                  <option value="2002">2002</option>
+                  <option value="2003">2003</option>
+                  <option value="2004">2004</option>
+                  <option value="2005">2005</option>
+                  <option value="2006">2006</option>
+                  <option value="2007">2007</option>
+                  <option value="2008">2008</option>
+                  <option value="2009">2009</option>
+                  <option value="2010">2010</option>
+                  <option value="2011">2011</option>
+                  <option value="2012">2012</option>
+                  <option value="2013">2013</option>
+                  <option value="2014">2014</option>
+                  <option value="2015">2015</option>
+                  <option value="2016">2016</option>
+                  <option value="2017">2017</option>
+                  <option value="2018">2018</option>
+                  <option value="2019">2019</option>
+                  <option value="2020">2020</option>
+                  <option value="2021">2021</option>
+                  <option value="2022">2022</option>
+                  <option value="2023">2023</option>
+                  <option value="2024">2024</option>
+
+               </select>
+            </div>
+            <div
+               class="border rounded-xl border-red-800 flex justify-between gap-2 bg-transparent lg:mb-4 lg:p-5 lg:flex-col max-lg:flex-col max-md:flex-row max-md:my-1 max-md:py-2     ">
+               <select name="rating" id="rating-select"
+                  class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm  bg-gray-200 max-md:w-1/4">
+                  <option value="">Note</option>
+                  <option value="0">0</option>
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+               </select>
+            </div>
+
+            <!-- filter genres  -->
+
+            <div
+               class="border rounded-xl border-red-800 flex justify-between gap-2 bg-transparent lg:mb-4 lg:p-5 lg:flex-col max-lg:flex-col max-md:flex-row max-md:my-1 max-md:py-2     ">
+               <h1 class="text-light text-red-800  max-md:w-1/5 ">Genre:</h1>
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm  bg-gray-200 max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="genre" value="Drama">
+                     <span class=" ">Drame </span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200 max-md:w-1/4 ">
+                  <label>
+                     <input type="checkbox" name="genre" value="Animé">
+                     <span class="text-reg ">Animé </span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200 max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="genre" value="Action">
+                     <span class="text-reg ">Action </span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200 max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="genre" value="Advanture">
+                     <span class="text-reg ">Adv </span>
+                  </label>
+               </div>
+            </div>
+            <!-- filter langages -->
+            <div
+               class="border rounded-xl border-red-800 flex justify-between gap-2 bg-transparent lg:mb-4 lg:p-5 lg:flex-col max-lg:flex-col max-md:flex-row max-md:my-1 max-md:py-2     ">
+               <h1 class="text-light text-red-800  max-md:w-1/5">Langage:</h1>
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200  max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="language" value="Arabic">
+                     <span class="text-reg ">Arb</span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200  max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="language" value="English">
+                     <span class="text-reg ">Eng</span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200  max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="language" value="French">
+                     <span class="text-reg ">Fr</span>
+                  </label>
+               </div>
+
+               <div class="border border-ishadow rounded-lg flex py-2 px-1 max-md:text-sm bg-gray-200  max-md:w-1/4">
+                  <label>
+                     <input type="checkbox" name="language" value="Spanish">
+                     <span class="text-reg ">spn</span>
+                  </label>
+               </div>
+
+            </div>
+            <div class="flex justify-center">
+               <!-- bouton apply filter -->
+               <button type="submit"
+                  class="w-40 h-10 bg-red-800 rounded-lg border-2 border-white text-white hover:bg-white hover:text-red-800 hover:border-black">
+                  <span class="max-md:text-xs ">Apply Filters</span>
+               </button>
+            </div>
+         </form>
+         <!-- bouton clear filter -->
+         <form method="GET" action="" class="flex justify-center max-md:h-max  max-lg:h-max">
             <button type="submit"
-              class="w-40 h-10 bg-white border rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
-              <span class=" ">profile</span>
+               class="w-40 h-10 bg-white rounded-lg border-2 border-red-800 text-black hover:bg-red-800 hover:text-white hover:border-black ">
+               <span class="max-md:text-xs ">Clear Filters</span>
             </button>
-          </a>
-        </div>
-
-      </div>
-      <hr class="border-2  border-black  	">
-      <div class=" flex justify-between ">
-        <div class="sm:flex sm:items-center sm:justify-between my-4 hidden sm:block">
-          <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-start">
-            <li>
-              <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                <span class="sr-only">Accueil</span>
-                Accueil
-              </a>
-            </li>
-
-            <li>
-              <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                <span class="sr-only">Ma liste</span>
-                Ma liste
-              </a>
-            </li>
-
-
-          </ul>
-        </div>
-        <div class=" flex justify-between">
-          <div class="sm:flex sm:justify-center sm:items-between  my-4    ">
-            <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-censter ">
-              <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                  <span class="sr-only">Facebook</span>
-                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                  <span class="sr-only">Instagram</span>
-                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                  <span class="sr-only">Twitter</span>
-                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path
-                      d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
-                  </svg>
-                </a>
-              </li>
-
-              <li>
-                <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
-                  <span class="sr-only">GitHub</span>
-                  <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                    <path fill-rule="evenodd"
-                      d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
-                      clip-rule="evenodd" />
-                  </svg>
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
+         </form>
       </div>
 
-      <div class="flex justify-center mt-5">
-        <p class="text-center text-sm text-gray-400">
-          &copy; 2024 CineFlix. Tous droits réservés.
-        </p>
+      <!-- div  pour afficher les films favoriser  -->
+
+      <div class="flex flex-col justify-start items-center  w-full  h-full ">
+
+         <div class=" h-1/6 w-full felx  justify-center items-center">
+            <h1 class="text-red-800 text-3xl  text-center" style="font-family: 'Hanalei Fill' , cursive;">Mes
+               Favoris</h1>
+         </div>
+
+         <div id="favoritesContainer"
+            class="h-5/6 gap-4 justify-start w-full max-lg:grid max-lg:grid-cols-2 max-lg:gap-1 p-4 lg:grid lg:grid-cols-4  max-md:grid-cols-2 max-sm:flex  max-sm:flex-col ">
+
+            <!-- affichage des cartes des films favoris -->
+
+         </div>
       </div>
-    </div>
-  </footer>
-  <!-- ================================================================================================================================================================ -->
+
+   </section>
 
 
-<script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const favoritesContainer = document.getElementById('favoritesContainer');
-        const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    
-        if (favorites.length === 0) {
-            favoritesContainer.innerHTML = '<p class="text-gray-500">Aucun film ajouté aux favoris.</p>';
-        } else {
-            favorites.forEach(film => {
-                const filmCard = `
-                    <div class="max-w-xs rounded h-[90%] overflow-hidden shadow-lg bg-white hover:border-4 hover:border-red-800">
-                        <div class="relative group">
-                            <div class="h-4/5 w-full bg-gray-200">
-                                <img src="${film.imageUrl}" alt="${film.title}" class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105">
-                                <div class="absolute inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                                    <h3 class="absolute top-16 text-white font-bold">${film.title}</h3>
-                                    <p class="text-white text-center p-4">${film.description}</p>
-                                </div>
-                                <button onclick="removeFromFavorites('${film.title}')" class="absolute bottom-16 right-4 py-2 px-4">
-                                    <img src="images/icones/corbeille.png" alt="corbeille" class="w-10">
-                                </button>
-                            </div>
-                        </div>
-                    </div>`;
-                favoritesContainer.innerHTML += filmCard;
-            });
-        }
-    });
-    
-    function removeFromFavorites(title) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        favorites = favorites.filter(film => film.title !== title);
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        location.reload();
-    }
-    </script>
+   <!-- ================================================================================================================================================================  -->
+   <!-- footer de la page index.html -->
+   <footer class="border-t-2 mt-5 bg-red-800">
+      <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8 mt-4">
+         <div class="sm:flex sm:items-center sm:justify-between my-3">
+            <div class="flex justify-center text-teal-600 sm:justify-start">
+               <div class="group relative">
+                  <div class="flex items-center flex-no-shrink mr-6">
+                     <span class="font-preosper text-logo tracking-tight text-ired text-base	">CineFlix</span>
+                  </div>
+               </div>
+            </div>
+            <div class=" hidden sm:block hover:text-ired ">
+               <a href="#">
+
+                  <button type="submit"
+                     class="w-40 h-10 bg-white  rounded-lg border-2 border-red-800 text-black hover:bg-black hover:text-white hover:border-white">
+                     <span class=" ">profile</span>
+                  </button>
+               </a>
+            </div>
+
+         </div>
+         <hr class="border-2  border-black  	">
+         <div class=" flex lg:justify-between max-md:justify-center md:justify-between">
+            <div class=" sm:items-center sm:justify-between my-4 hidden sm:block">
+               <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-start">
+                  <li>
+                     <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                        <span class="sr-only">Accueil</span>
+                        Accueil
+                     </a>
+                  </li>
+
+                  <li>
+                     <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                        <span class="sr-only">Ma liste</span>
+                        Ma liste
+                     </a>
+                  </li>
+
+
+               </ul>
+            </div>
+            <div class="flex lg:justify-between max-md:justify-center max-md:items-center">
+               <div class="sm:flex sm:justify-center sm:items-between  my-4    ">
+                  <ul class="mt-4 flex  gap-6 sm:mt-0 sm:justify-censter ">
+                     <li>
+                        <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                           <span class="sr-only">Facebook</span>
+                           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd"
+                                 d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                           <span class="sr-only">Instagram</span>
+                           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd"
+                                 d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                           <span class="sr-only">Twitter</span>
+                           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path
+                                 d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+                           </svg>
+                        </a>
+                     </li>
+
+                     <li>
+                        <a href="#" rel="noreferrer" target="_blank" class="text-iblue transition hover:text-iblue/75">
+                           <span class="sr-only">GitHub</span>
+                           <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                              <path fill-rule="evenodd"
+                                 d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"
+                                 clip-rule="evenodd" />
+                           </svg>
+                        </a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+
+         <div class="flex justify-center mt-5">
+            <p class="text-center text-sm text-gray-400">
+               &copy; 2024 CineFlix. Tous droits réservés.
+            </p>
+         </div>
+      </div>
+   </footer>
+
+   <!-- ================================================================================================================================================================ -->
 
 </body>
 
-<!-- Script pour afficher/masquer le menu sur petits écrans -->
+<!-- ================================================================================================================================================================ -->
+<!-- Script js  -->
 <script src="js/toggleMenu.js"></script>
 <script src="js/theme.js"></script>
-
-<script src="js/next_precedent.js"></script>
+<script src="js/addDeleteCard.js"></script>
 
 </html>
